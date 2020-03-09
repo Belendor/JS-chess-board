@@ -1,0 +1,40 @@
+.board{
+    display: inline-block;
+    width: 80vmin;
+    height: 80vmin;
+    margin: 10vmin calc(50% - 40vmin);
+    border: 2px solid black;
+    background-color: seashell;
+}
+.game{
+    display: inline-block;
+    width: 90vmin;
+    height: 90vmin;
+    background-color: rgba(43, 78, 27, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 5vmin calc(50% - 45vmin);
+    z-index: -1;
+}
+
+.topBorder{
+    display: inline-block;
+    background-color: tomato;
+    width: 80vmin;
+    height: 5vmin;
+    margin-left: calc(50% - 40vmin);
+}
+
+.leftBorder{
+    height: 80vmin;
+    width: 5vmin;
+    background-color: tomato;
+}
+
+.topBox{
+    display: inline-block;
+    height: 100%;
+    background-color: yellow;
+    border: 1px solid red;
+}
