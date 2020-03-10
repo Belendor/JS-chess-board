@@ -38,6 +38,9 @@
     display: inline-block;
     text-align: center;
 }
+    .leftBox{
+        padding-top: 2.5vmin;
+    }
 .rightBottom{
     display: inline-block;
 }
@@ -54,6 +57,7 @@
         display: inline-block;
         text-align: center;
         transform: rotate(180deg);
+        height: 100%;
     }
 .rightBorder{
     display: inline-block;
@@ -62,9 +66,10 @@
     position: absolute;
     top: 0;
     margin-top: 5vmin;
-    padding-bottom: 2.5vmin;
+    text-align: center;
   
 }
 .rightBox{
     transform: rotate(180deg);
+    padding-top: 2.5vmin;
 }
