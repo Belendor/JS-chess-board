@@ -1,5 +1,5 @@
 "use strict";
-let wordList = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+let wordList = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
 const board = document.querySelector(".board");
 
 const topBorder = document.querySelector(".topBorder");
@@ -9,8 +9,8 @@ const bottomBorder = document.querySelector(".bottomBorder");
 
 let color1 = "black"
 let color2 = "white"
-const column = 8;
-const row = 8;
+const column = 33;
+const row = 33;
 
 
 
@@ -23,7 +23,6 @@ let BOTTOM = ""
 
 for (let i = 0; i<row;i++){
    let box ="";
-
    for (let j = 0; j<column; j++){
        if (((i+1)+(j+1))%2 === 0){
         colorSwitcher = color1;
@@ -46,17 +45,35 @@ for (let i = 0; i<row;i++){
    RIGHT += `<div class="rightBox" style="height: calc(100% / ${column})">${(i+1)}</div>`
 }
 
-
-
 for(let i = 0; i<column; i++){
-   let wordCounter = wordList[i]
-   if(i>=26){
-         for (let j = 0; j<Math.floor(26/26); j++){
-            wordCounter = wordList[j]+wordList[i-26]
-         }
+  
+   let indexArr = [];
+   console.log(indexArr);
+   
+   function dvidesimSesi (num){
+      let dalintas = Math.floor(num / 26);
+      let liekana = num%26;
+      indexArr.unshift(liekana)
+   
+     if(dalintas >= 1){
+      let vienuMazenis = dalintas - 1
+      dvidesimSesi(vienuMazenis)
+     }
    }
-    TOP +=  `<div class="topBox" style="width: calc(100% / ${column})">${wordCounter}</div>`
-    BOTTOM +=  `<div class="bottomBox" style="width: calc(100% / ${column})">${wordCounter}</div>`
+
+   dvidesimSesi(i)
+   
+   let reikiamasSkaicius = ""
+   
+   for(let x = 0; x<indexArr.length; x++){
+      let reikiamsIndex = indexArr[x] 
+      reikiamasSkaicius += wordList[reikiamsIndex]
+      console.log(reikiamasSkaicius);
+        
+   }
+
+    TOP +=  `<div class="topBox" style="width: calc(100% / ${column})">${reikiamasSkaicius}</div>`
+    BOTTOM +=  `<div class="bottomBox" style="width: calc(100% / ${column})">${reikiamasSkaicius}</div>`
 }
 
 
