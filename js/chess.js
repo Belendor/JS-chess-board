@@ -64,14 +64,11 @@ for(let i = 0; i<column; i++){
    dvidesimSesi(i)
    
    let reikiamasSkaicius = ""
-   
    for(let x = 0; x<indexArr.length; x++){
       let reikiamsIndex = indexArr[x] 
       reikiamasSkaicius += wordList[reikiamsIndex]
-      console.log(reikiamasSkaicius);
-        
+      console.log(reikiamasSkaicius);  
    }
-
     TOP +=  `<div class="topBox" style="width: calc(100% / ${column})">${reikiamasSkaicius}</div>`
     BOTTOM +=  `<div class="bottomBox" style="width: calc(100% / ${column})">${reikiamasSkaicius}</div>`
 }
